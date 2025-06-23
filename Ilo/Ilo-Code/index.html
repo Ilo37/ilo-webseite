@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ilo – Mode-Tech Info</title>
+    <style>
+         :root {
+            --primary: #4fc3f7;
+            --secondary: #ffb74d;
+            --accent: #81c784;
+            --usp-bg: #f4fdf7;
+            --text: #333;
+        }
+        
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #fefefe;
+            color: var(--text);
+        }
+        
+        header {
+            position: fixed;
+            width: 100%;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0rem 0rem;
+        }
+        
+        .logo-area {
+            display: flex;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: black;
+        }
+        
+        .logo-area img {
+            height: 100px;
+            margin-right: 1px;
+            display: inline-block;
+        }
+        
+        nav a {
+            margin-left: 1rem;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            margin-right: 1rem;
+        }
+        
+        .hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            color: white;
+        }
+        
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem;
+            height: 100%;
+        }
+        
+        .hero-text {
+            flex: 1;
+            max-width: 50%;
+        }
+        
+        .hero-logo {
+            flex: 1;
+            margin-left: 350px;
+        }
+        
+        .hero-logo img {
+            max-width: 200px;
+        }
+        
+        section.functionality-wrapper {
+            background-color: #ffffff;
+        }
+        
+        section.functionality {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 4rem 2rem;
+            align-items: center;
+        }
+        
+        .function-text {
+            flex: 1;
+            max-width: 50%;
+            padding-right: 2rem;
+        }
+        
+        .function-3d {
+            flex: 1;
+            background: #e0e0e0;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            flex-direction: column;
+        }
+        
+        section.benefits {
+            padding: 3rem 2rem;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            text-align: center;
+        }
+        
+        .benefit-box,
+        .usp-box {
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 10px rgba(1, 0.5, 0.5, 0.5);
+            padding: 1.5rem;
+            border-radius: 12px;
+            max-width: 200px;
+            text-align: center;
+            margin: 1rem;
+        }
+        
+        .benefit-container,
+        .usp-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 5rem;
+            margin-top: 2rem;
+        }
+        
+        .usp-section {
+            background-color: #F5F5DC;
+            color: var(--text);
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .usp-section::before {
+            content: "";
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 8px;
+            background: var(--secondary);
+            border-radius: 4px;
+        }
+        
+        section.contact-section {
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+            margin: auto;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            margin-bottom: 1rem;
+            padding: 0.75rem;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+        }
+        
+        .contact-form button {
+            padding: 0.75rem;
+            /* Größe (Höhe) */
+            background-color: var(--white);
+            /* Farbe */
+            color: rgb(0, 0, 0);
+            /* Textfarbe */
+            border: 1;
+            border-radius: 6px;
+            font-size: 1rem;
+            /* Schriftgröße */
+            cursor: pointer;
+        }
+        
+        footer {
+            padding: 1rem 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            background: #f1f1f1;
+        }
+        
+        footer a {
+            margin: 0 0.5rem;
+            color: var(--text);
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo-area">
+            <a href="index.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                <img src="ilo.png" alt="Ilo Logo">Ilo
+            </a>
+        </div>
+        <nav>
+            <a href="ueber-uns.html">Über Uns</a>
+            <a href="demo.html">Demo Version</a>
+            <a href="kontakt.html">Kontakt</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <video autoplay muted loop playsinline class="hero-video">
+      <source src="hero-video.mp4" type="video/mp4">
+      Dein Browser unterstützt kein Video.
+    </video>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Dein digitaler Anproberaum für deinen Online-Shop</h1>
+                <p>Mit Ilo hebst du deinen Online-Shop auf das nächste Level. Wir integrieren die Software schnell und unkompliziert – und du profitierst sofort von den Vorteilen.</p>
+            </div>
+            <div class="hero-logo">
+                <img src="ilo.png" alt="Ilo Logo groß">
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits">
+        <h2>Was haben Sie davon? 🤔</h2>
+        <div class="benefit-container">
+            <div class="benefit-box">
+                <h3>Weniger Retouren 📦❌</h3>
+                <p>Reduzieren Sie Retouren durch virtuelle Passformprüfung – Kunden sehen vor dem Kauf, wie die Kleidung wirklich sitzt.</p>
+            </div>
+            <div class="benefit-box">
+                <h3>Umsatz steigern 📈 </h3>
+                <p>Steigern Sie Ihren Umsatz – Kunden treffen schneller Kaufentscheidungen, weil sie direkt sehen, was ihnen steht.</p>
+            </div>
+            <div class="benefit-box">
+                <h3>Marke modernisieren 🧬</h3>
+                <p>Modernisieren Sie Ihre Marke mit einem innovativen, digitalen Einkaufserlebnis – interaktiv, zeitgemäß und beeindruckend.</p>
+            </div>
+            <div class="benefit-box">
+                <h3>Einfache Integration ⚙️</h3>
+                <p>Einfache Integration – schnell einsatzbereit, ohne Aufwand für Ihr Team.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="usp-section">
+        <h2>Was uns von anderen unterscheidet ✨</h2>
+        <div class="usp-container">
+            <div class="usp-box">
+                <h3>Benutzerfreundlich 🖱️</h3>
+                <p>Mit nur wenigen Klicks Kleidung in 3D – ganz ohne technisches Vorwissen oder zusätzliches Personal.</p>
+            </div>
+            <div class="usp-box">
+                <h3>Rundum-sorglos Integration 🔧</h3>
+                <p>Wir übernehmen die komplette Integration für Sie – inklusive IT-Service und persönlichem Support.</p>
+            </div>
+            <div class="usp-box">
+                <h3>Realistische Passform 👕</h3>
+                <p>Zeigen Sie Ihren Kunden, wie Kleidung realistisch und maßgetreu an ihrem eigenen Avatar sitzt – für ein echtes Anprobe-Erlebnis.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <h2>Kontakt</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="E-Mail">
+            <input type="text" placeholder="Unternehmen">
+            <textarea placeholder="Nachricht"></textarea>
+            <button type="submit">Absenden</button>
+        </form>
+    </section>
+
+    <footer>
+        <a href="#">Impressum</a> | <a href="#">Datenschutz</a>
+    </footer>
+</body>
+
+</html>
